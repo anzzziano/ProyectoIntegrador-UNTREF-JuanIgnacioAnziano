@@ -25,6 +25,8 @@ El trabajo integrador 100% funcional deberá ser presentado el 30 de julio de 20
 
 -__Ruta para obtener todos los productos__
 
+__/prendas__ en el buscador
+
 ```javascript
 app.get("/prendas", async (req, res) => {
   const client = await connectToMongoDB();
@@ -76,6 +78,8 @@ EJEMPLO = /prendas/22
 
 __-Ruta para filtrar un producto por la busqueda de su nombre.__
 
+__/prendas/nombre/:nombre__ en el buscador
+
 ```javascript
 app.get('/prendas/nombre/:nombre', async (req, res) => {
   const nombrePrenda = req.params.nombre || '';
@@ -105,7 +109,6 @@ app.get('/prendas/nombre/:nombre', async (req, res) => {
 });
 ```
 __Ruta que usaria para buscar una prenda por su NOMBRE =
-/prendas/nombre/:nombre__
 
      EJEMPLO = /prendas/nombre/camiseta
 
@@ -161,6 +164,8 @@ __BODY__
 
 }
 
+__crea el producto que desees, pero utilizando los parametros indicados arriba__
+
 //----------------------
 
 __-modificar el precio (importe) de un producto con patch__
@@ -207,7 +212,7 @@ __BODY__
   
 }
 
-cambias el importe por el que desees
+__cambias el importe por el que desees__
 
 //--------------------------------------------------
 
