@@ -15,6 +15,9 @@ El trabajo integrador 100% funcional deberá ser presentado el 30 de julio de 20
   ### codigo de cada consigna
 
   __-RUTA DE INICIO__
+
+__codigo__
+
   ```javascript
   app.get("/", (req, res) => {
   res.status(200).end("inicio del local ")
@@ -26,6 +29,8 @@ El trabajo integrador 100% funcional deberá ser presentado el 30 de julio de 20
 -__Ruta para obtener todos los productos__
 
 __/prendas__ en el buscador
+
+__codigo__
 
 ```javascript
 app.get("/prendas", async (req, res) => {
@@ -52,6 +57,10 @@ EJEMPLO = /prendas
 
 __-obtener un producto por su id__
 
+__/prendas/id__ en el buscador ej =  __/prendas/22__
+
+__codigo__
+
 ```javascript
 app.get("/prendas/:id", async (req, res) => {
   const prendaId = parseInt(req.params.id) || 0;
@@ -68,17 +77,17 @@ app.get("/prendas/:id", async (req, res) => {
   !prenda ? res.status(404).send("No existe esa prenda") : res.json(prenda);//envia la lista de prendas en formato JSON
 });             //manejo de error del cliente
 ```
-__Ruta que usaria para buscar una prenda por su ID =
-/prendas/:id__
+__Ruta que usaria para buscar una prenda por su ID__
 
-EJEMPLO = /prendas/22
 
 //-----------------------
 
 
 __-Ruta para filtrar un producto por la busqueda de su nombre.__
 
-__/prendas/nombre/:nombre__ en el buscador
+__/prendas/nombre/:nombre__ en el buscador, EJ = __prendas/nombre/camiseta__
+
+__codigo__
 
 ```javascript
 app.get('/prendas/nombre/:nombre', async (req, res) => {
@@ -108,14 +117,14 @@ app.get('/prendas/nombre/:nombre', async (req, res) => {
   }
 });
 ```
-__Ruta que usaria para buscar una prenda por su NOMBRE =
-
-     EJEMPLO = /prendas/nombre/camiseta
+__Ruta que usaria para buscar una prenda por su NOMBRE 
 
 //----------------
 
 
 __-agregar un producto con post__
+
+__codigo__
 
 ```javascript
 app.post("/prendas", async (req, res) => {
@@ -212,17 +221,24 @@ __BODY__
   
 }
 
-__cambias el importe por el que desees__
+__cambias el importe por el que desees PERO.... utilizando los parametros indicados__
 
 //--------------------------------------------------
 
 __-rutas inexistentes__ 
+__si hay alguna ruta inexistente se utiliza el siguiente codigo__
+
+__codigo__
+
 ```javascript
 app.use((req, res, next) => {
   res.status(404).send("no existe esa ruta");
 });
 ```
-__-conexion a mongoDB__ 
+__-conexion a mongoDB ..... carpeta src , archivo mongodb.js__ (src/mongodb.js)
+
+__codigo__
+
 ```javascript
 require("dotenv").config();
 
